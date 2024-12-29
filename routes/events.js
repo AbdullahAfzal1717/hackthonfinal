@@ -2,10 +2,10 @@ import express from 'express';
 import { Events } from "../models/events.js"
 
 
-const notesRouter = express.Router();
+const eventsRouter = express.Router();
 
 
-notesRouter.get("/get/:id", async (req, res) => {
+eventsRouter.get("/get/:id", async (req, res) => {
 
     const { id } = req.params
     console.log(id)
@@ -21,7 +21,7 @@ notesRouter.get("/get/:id", async (req, res) => {
 })
 
 
-notesRouter.post("/create", async (req, res) => {
+eventsRouter.post("/create", async (req, res) => {
     const eventData = req.body
     console.log("data", eventData);
     try {
@@ -35,6 +35,6 @@ notesRouter.post("/create", async (req, res) => {
     }
 
 })
-export { notesRouter }
+export { eventsRouter }
 
 
