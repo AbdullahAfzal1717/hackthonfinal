@@ -22,4 +22,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 app.use("/auth", authRouter)
-app.use("/", notesRouter)
+app.use("/events", notesRouter)

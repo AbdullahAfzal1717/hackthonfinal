@@ -4,7 +4,7 @@ import { Notes } from "../models/notes.js"
 const notesRouter = express.Router();
 
 
-notesRouter.get("/events/get/:id", async (req, res) => {
+notesRouter.get("/get/:id", async (req, res) => {
 
     const { id } = req.params
     console.log(id)
@@ -18,7 +18,7 @@ notesRouter.get("/events/get/:id", async (req, res) => {
         console.log(error)
     }
 })
-notesRouter.get("/events/get_single/:id", async (req, res) => {
+notesRouter.get("/get_single/:id", async (req, res) => {
 
     const { id } = req.params
     console.log(id)
@@ -53,7 +53,7 @@ notesRouter.post("/create", (req, res) => {
 
 })
 
-notesRouter.patch("/events/update/:id", async (req, res) => {
+notesRouter.patch("/update/:id", async (req, res) => {
     const todoData = req.body
     const { id } = req.params
     try {
@@ -69,7 +69,7 @@ notesRouter.patch("/events/update/:id", async (req, res) => {
 
 })
 
-notesRouter.delete('/events/delete/:id', async (req, res) => {
+notesRouter.delete('/delete/:id', async (req, res) => {
 
     const { id } = req.params
     try {
