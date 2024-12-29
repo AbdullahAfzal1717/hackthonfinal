@@ -4,7 +4,7 @@ import { Notes } from "../models/notes.js"
 const notesRouter = express.Router();
 
 
-notesRouter.get("/todos/get/:id", async (req, res) => {
+notesRouter.get("/events/get/:id", async (req, res) => {
 
     const { id } = req.params
     console.log(id)
@@ -18,7 +18,7 @@ notesRouter.get("/todos/get/:id", async (req, res) => {
         console.log(error)
     }
 })
-notesRouter.get("/todos/get_single/:id", async (req, res) => {
+notesRouter.get("/events/get_single/:id", async (req, res) => {
 
     const { id } = req.params
     console.log(id)
@@ -34,14 +34,14 @@ notesRouter.get("/todos/get_single/:id", async (req, res) => {
 })
 
 
-notesRouter.post("/todos/create", (req, res) => {
-    const todoData = req.body
-    console.log("todossss", todoData);
+notesRouter.post("/create", (req, res) => {
+    const eventData = req.body
+    console.log("todossss", eventData);
     try {
-        const todo = new Notes(todoData);
+        const event = new Notes(eventData);
 
 
-        todo.save();
+        event.save();
 
 
         res.status(201).json({ message: "A new item has been successfully created", todo });
@@ -53,7 +53,7 @@ notesRouter.post("/todos/create", (req, res) => {
 
 })
 
-notesRouter.patch("/todos/update/:id", async (req, res) => {
+notesRouter.patch("/events/update/:id", async (req, res) => {
     const todoData = req.body
     const { id } = req.params
     try {
@@ -69,7 +69,7 @@ notesRouter.patch("/todos/update/:id", async (req, res) => {
 
 })
 
-notesRouter.delete('/todos/delete/:id', async (req, res) => {
+notesRouter.delete('/events/delete/:id', async (req, res) => {
 
     const { id } = req.params
     try {
