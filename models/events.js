@@ -5,11 +5,13 @@ const { Schema } = mongoose;
 const schema = new Schema({
     createdBy: { type: String, required: true },
     title: { type: String, default: "" },
-    content: { type: String, default: "" },
+    description: { type: String, default: "" },
     category: { type: String, default: "" },
+    location: { type: String, default: "" },
+
 
 }, { timestamps: true })
 
-const Notes = mongoose.model('Notes', schema)
+const Events = mongoose.model('Events', schema)
 
-export { Notes }
+export { Events }
