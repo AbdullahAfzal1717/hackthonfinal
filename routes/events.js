@@ -5,12 +5,11 @@ import { Events } from "../models/events.js"
 const eventsRouter = express.Router();
 
 
-eventsRouter.get("/get/:id", async (req, res) => {
+eventsRouter.get("/get", async (req, res) => {
 
-    const { id } = req.params
-    console.log(id)
+
     try {
-        const events = await Events.find({ uid: id })
+        const events = await Events.find()
         console.log("gettting events", events)
         res.status(200).json({ events });
     }
