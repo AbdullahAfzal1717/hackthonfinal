@@ -18,5 +18,5 @@ const { PORT = 8000 } = process.env;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
-app.use("/", authRouter)
+app.use("/auth", authRouter)
 app.use("/", notesRouter)
